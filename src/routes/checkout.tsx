@@ -170,6 +170,7 @@ function Checkout() {
       payment_method: paymentMethod,
       payment_status: "paid",
       shipping_address: selectedAddress as any,
+      order_number: `ORD-${Date.now()}`,
     }).select().single();
     
     setPlacing(false);
