@@ -609,24 +609,7 @@
       }
     }
   ],
-  "addresses": [
-    {
-      "id": "7b28aaad-5abc-4187-ac2c-b69b622b98b1",
-      "created_at": "2026-07-09T16:02:26.459Z",
-      "updated_at": "2026-07-09T16:02:26.459Z",
-      "label": "Home",
-      "full_name": "S Sreesh",
-      "phone": "8129410562",
-      "address_line1": "manimandiram ",
-      "address_line2": "channanikadu ",
-      "city": "kottayam",
-      "state": "kerala",
-      "pincode": "686533",
-      "country": "India",
-      "is_default": true,
-      "user_id": "9276dc7c-36db-463a-8bd7-0777a49663aa"
-    }
-  ],
+  "addresses": [],
   "reviews": [],
   "contact_queries": [],
   "users": [
