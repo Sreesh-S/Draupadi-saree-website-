@@ -146,3 +146,139 @@ $$;
 -- Ensure order_number column exists on public.orders
 ALTER TABLE public.orders ADD COLUMN IF NOT EXISTS order_number TEXT;
 
+-- Create notifications table if it does not exist
+CREATE TABLE IF NOT EXISTS public.notifications (
+  id UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
+  user_id TEXT NOT NULL,
+  title TEXT NOT NULL,
+  message TEXT NOT NULL,
+  type TEXT NOT NULL,
+  read BOOLEAN NOT NULL DEFAULT false,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+GRANT SELECT, INSERT, UPDATE, DELETE ON public.notifications TO authenticated;
+GRANT ALL ON public.notifications TO service_role;
+
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies WHERE tablename = 'notifications' AND policyname = 'anyone manage own notifications'
+  ) THEN
+    ALTER TABLE public.notifications ENABLE ROW LEVEL SECURITY;
+    CREATE POLICY "anyone manage own notifications" ON public.notifications
+      FOR ALL TO authenticated USING (auth.uid()::text = user_id OR user_id = 'admin');
+  END IF;
+END
+$$;
+
+-- Create return_settings table if it does not exist
+CREATE TABLE IF NOT EXISTS public.return_settings (
+  id TEXT NOT NULL PRIMARY KEY,
+  enable_returns BOOLEAN NOT NULL DEFAULT true,
+  return_window INTEGER NOT NULL DEFAULT 3,
+  reasons JSONB NOT NULL DEFAULT '["Wrong Size", "Quality Issue", "Damaged", "Other"]'::jsonb,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+GRANT SELECT ON public.return_settings TO anon, authenticated;
+GRANT ALL ON public.return_settings TO service_role;
+
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies WHERE tablename = 'return_settings' AND policyname = 'anyone read return settings'
+  ) THEN
+    ALTER TABLE public.return_settings ENABLE ROW LEVEL SECURITY;
+    CREATE POLICY "anyone read return settings" ON public.return_settings
+      FOR SELECT TO anon, authenticated USING (true);
+    CREATE POLICY "admins manage return settings" ON public.return_settings
+      FOR ALL TO authenticated USING (public.has_role(auth.uid(), 'admin'));
+  END IF;
+END
+$$;
+
+-- Seed default settings
+INSERT INTO public.return_settings (id, enable_returns, return_window, reasons)
+VALUES ('default-settings', true, 3, '["Wrong Product", "Damaged Product", "Defective Product", "Quality Issue", "Wrong Size", "Other"]'::jsonb)
+ON CONFLICT (id) DO NOTHING;
+
+-- Create returns table if it does not exist
+CREATE TABLE IF NOT EXISTS public.returns (
+  id UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
+  order_id UUID NOT NULL REFERENCES public.orders(id) ON DELETE CASCADE,
+  user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  customer_name TEXT NOT NULL,
+  customer_email TEXT NOT NULL,
+  product_name TEXT NOT NULL,
+  product_image TEXT,
+  price NUMERIC(12,2) NOT NULL,
+  item_details JSONB DEFAULT '{}'::jsonb,
+  reason TEXT NOT NULL,
+  comments TEXT,
+  images JSONB DEFAULT '[]'::jsonb,
+  delivery_date TIMESTAMPTZ,
+  status TEXT NOT NULL DEFAULT 'requested',
+  rejection_reason TEXT,
+  pickup_details JSONB,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+GRANT SELECT, INSERT, UPDATE, DELETE ON public.returns TO authenticated;
+GRANT ALL ON public.returns TO service_role;
+
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies WHERE tablename = 'returns' AND policyname = 'users view own returns'
+  ) THEN
+    ALTER TABLE public.returns ENABLE ROW LEVEL SECURITY;
+    CREATE POLICY "users view own returns" ON public.returns
+      FOR SELECT TO authenticated USING (auth.uid() = user_id OR public.has_role(auth.uid(), 'admin'));
+    CREATE POLICY "users insert own returns" ON public.returns
+      FOR INSERT TO authenticated WITH CHECK (auth.uid() = user_id);
+    CREATE POLICY "admins manage returns" ON public.returns
+      FOR UPDATE TO authenticated USING (public.has_role(auth.uid(), 'admin'));
+  END IF;
+END
+$$;
+
+CREATE OR REPLACE TRIGGER returns_updated BEFORE UPDATE ON public.returns
+  FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+
+-- Create storage buckets if they do not exist
+INSERT INTO storage.buckets (id, name, public)
+VALUES 
+  ('returns', 'returns', true),
+  ('product-images', 'product-images', true)
+ON CONFLICT (id) DO NOTHING;
+
+-- Set up policies for the returns bucket
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies WHERE tablename = 'objects' AND schemaname = 'storage' AND policyname = 'Anyone can view return images'
+  ) THEN
+    CREATE POLICY "Anyone can view return images" ON storage.objects FOR SELECT TO public USING (bucket_id = 'returns');
+  END IF;
+  
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies WHERE tablename = 'objects' AND schemaname = 'storage' AND policyname = 'Authenticated users can upload return images'
+  ) THEN
+    CREATE POLICY "Authenticated users can upload return images" ON storage.objects FOR INSERT TO authenticated WITH CHECK (bucket_id = 'returns');
+  END IF;
+
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies WHERE tablename = 'objects' AND schemaname = 'storage' AND policyname = 'Anyone can view product images'
+  ) THEN
+    CREATE POLICY "Anyone can view product images" ON storage.objects FOR SELECT TO public USING (bucket_id = 'product-images');
+  END IF;
+
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies WHERE tablename = 'objects' AND schemaname = 'storage' AND policyname = 'Authenticated users can upload product images'
+  ) THEN
+    CREATE POLICY "Authenticated users can upload product images" ON storage.objects FOR INSERT TO authenticated WITH CHECK (bucket_id = 'product-images');
+  END IF;
+END
+$$;
+
