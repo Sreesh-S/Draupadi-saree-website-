@@ -33,4 +33,6 @@ dist-ssr
 .env
 .workspace/
 email-logs.txt
+.vercel/
+
 
