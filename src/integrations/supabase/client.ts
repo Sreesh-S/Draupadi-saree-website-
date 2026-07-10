@@ -1,3 +1,4 @@
+import { createClient } from "@supabase/supabase-js";
 import {
   executeLocalQuery,
   localDbAuthSignIn,
@@ -5,6 +6,11 @@ import {
   localDbAuthUpdateUser,
   uploadLocalFile,
 } from "./local-db.functions";
+
+const supabaseUrl = (typeof import.meta.env !== "undefined" ? import.meta.env.VITE_SUPABASE_URL : undefined) || (typeof process !== "undefined" ? process.env.VITE_SUPABASE_URL : undefined) || "";
+const supabaseAnonKey = (typeof import.meta.env !== "undefined" ? (import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || import.meta.env.VITE_SUPABASE_ANON_KEY) : undefined) || (typeof process !== "undefined" ? (process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.VITE_SUPABASE_ANON_KEY) : undefined) || "";
+
+const useRealSupabase = Boolean(supabaseUrl && supabaseAnonKey);
 
 class MockQueryBuilder {
   table: string;
@@ -165,7 +171,7 @@ const setStoredSession = (session: any) => {
   }
 };
 
-export const supabase = {
+const mockSupabase = {
   from(table: string) {
     return new MockQueryBuilder(table);
   },
@@ -275,3 +281,7 @@ export const supabase = {
     }
   }
 };
+
+export const supabase = useRealSupabase
+  ? createClient(supabaseUrl, supabaseAnonKey)
+  : mockSupabase;

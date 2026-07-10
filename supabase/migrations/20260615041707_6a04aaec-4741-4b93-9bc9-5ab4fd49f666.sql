@@ -110,3 +110,36 @@ VALUES
 -- A demo coupon
 INSERT INTO public.coupons (code, description, discount_type, discount_value, min_order_amount, max_discount, active)
 VALUES ('WELCOME10','10% off your first order (up to ₹2000)','percent',10,1999,2000,true);
+
+-- Automatically assign roles to new users on signup
+CREATE OR REPLACE FUNCTION public.handle_new_user()
+RETURNS TRIGGER
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public
+AS $$
+BEGIN
+  -- Insert profile
+  INSERT INTO public.profiles (id, full_name, phone, email)
+  VALUES (
+    NEW.id,
+    COALESCE(NEW.raw_user_meta_data->>'full_name', ''),
+    NEW.raw_user_meta_data->>'phone',
+    NEW.email
+  );
+
+  -- Insert default role
+  INSERT INTO public.user_roles (user_id, role)
+  VALUES (
+    NEW.id,
+    CASE 
+      WHEN NEW.email = 'draupadisaree.admin@gmail.com' THEN 'admin'::public.app_role
+      ELSE 'customer'::public.app_role
+    END
+  )
+  ON CONFLICT (user_id, role) DO NOTHING;
+
+  RETURN NEW;
+END;
+$$;
+
