@@ -1,0 +1,770 @@
+{
+  "products": [
+    {
+      "id": "p-1",
+      "name": "Count Mul Cotton",
+      "slug": "rukmini-kanchipuram-silk",
+      "sku": "DRP-KAN-001",
+      "description": "Pure mulberry silk Kanchipuram with gold zari border and traditional motifs.",
+      "saree_type": "Kanchipuram",
+      "fabric": "Pure Silk",
+      "category": "Silk Sarees",
+      "sub_category": "Kanchipuram",
+      "thumbnail": "/uploads/1fc14iemzy3-1783675747491.jpg",
+      "images": [
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1200",
+        "/uploads/1fc14iemzy3-1783675747491.jpg"
+      ],
+      "price": 2000,
+      "offer_price": 1299,
+      "discount_pct": 35,
+      "stock": 3,
+      "color": "Maroon",
+      "occasion": "Wedding, Festive",
+      "wash_care": "Dry clean only",
+      "is_featured": true,
+      "is_trending": true,
+      "is_bestseller": true,
+      "is_new_arrival": true,
+      "is_archived": false,
+      "status": "active",
+      "updated_at": "2026-07-10T09:29:25.982Z",
+      "low_stock_threshold": 5,
+      "weight": "",
+      "length": ""
+    },
+    {
+      "id": "p-2",
+      "name": " Count Mul Cotton",
+      "slug": "ivory-pearl-designer-drape",
+      "sku": "DRP-DES-002",
+      "description": "Hand-embellished ivory georgette with pearl work and stone embroidery.",
+      "saree_type": "Designer",
+      "fabric": "Georgette",
+      "category": "Designer Sarees",
+      "sub_category": "Party",
+      "thumbnail": "/uploads/pgcpkqk3na-1783675622080.jpg",
+      "images": [
+        "/uploads/pgcpkqk3na-1783675622080.jpg"
+      ],
+      "price": 2000,
+      "offer_price": 1299,
+      "discount_pct": 35,
+      "stock": 8,
+      "color": "Ivory",
+      "occasion": "Reception, Party",
+      "wash_care": "Dry clean only",
+      "is_featured": true,
+      "is_trending": false,
+      "is_bestseller": false,
+      "is_new_arrival": true,
+      "is_archived": false,
+      "status": "active",
+      "updated_at": "2026-07-10T09:27:19.408Z",
+      "low_stock_threshold": 5,
+      "weight": "",
+      "length": ""
+    },
+    {
+      "id": "p-3",
+      "name": "120 Count Mul Cotton",
+      "slug": "crimson-bridal-banarasi",
+      "sku": "DRP-BNR-003",
+      "description": "Bridal Banarasi silk woven with intricate kadhwa work and heavy zari pallu.",
+      "saree_type": "Banarasi",
+      "fabric": "Katan Silk",
+      "category": "Wedding Collection",
+      "sub_category": "Bridal",
+      "thumbnail": "/uploads/wrfrwhpnzia-1783675803116.jpg",
+      "images": [
+        "/uploads/wrfrwhpnzia-1783675803116.jpg"
+      ],
+      "price": 2000,
+      "offer_price": 1299,
+      "discount_pct": 35,
+      "stock": 5,
+      "color": "Crimson Red",
+      "occasion": "Wedding",
+      "wash_care": "Dry clean only",
+      "is_featured": true,
+      "is_trending": true,
+      "is_bestseller": true,
+      "is_new_arrival": false,
+      "is_archived": false,
+      "status": "active",
+      "updated_at": "2026-07-10T09:30:50.982Z",
+      "low_stock_threshold": 5,
+      "weight": "",
+      "length": ""
+    },
+    {
+      "id": "p-4",
+      "name": "Emerald Mysore Silk",
+      "slug": "emerald-mysore-silk",
+      "sku": "DRP-MYS-004",
+      "description": "Lightweight Mysore crepe silk with contrast border, ideal for daywear.",
+      "saree_type": "Mysore",
+      "fabric": "Crepe Silk",
+      "category": "Silk Sarees",
+      "sub_category": "Mysore",
+      "thumbnail": "https://images.unsplash.com/photo-1618436917352-cd3d11ea4d15?w=800",
+      "images": [
+        "https://images.unsplash.com/photo-1618436917352-cd3d11ea4d15?w=1200"
+      ],
+      "price": 2000,
+      "offer_price": 1299,
+      "discount_pct": 35,
+      "stock": 0,
+      "color": "Emerald Green",
+      "occasion": "Festive, Office",
+      "wash_care": "Dry clean recommended",
+      "is_featured": false,
+      "is_trending": true,
+      "is_bestseller": false,
+      "is_new_arrival": false,
+      "is_archived": false,
+      "status": "active",
+      "updated_at": "2026-07-10T09:30:46.919Z",
+      "low_stock_threshold": 5,
+      "weight": "",
+      "length": ""
+    },
+    {
+      "id": "p-5",
+      "name": "120 Count Mul Cotton",
+      "slug": "blush-handloom-cotton",
+      "sku": "DRP-COT-005",
+      "description": "Soft handloom cotton with delicate jamdani buttis and tassel pallu.",
+      "saree_type": "Handloom",
+      "fabric": "Cotton",
+      "category": "Cotton Sarees",
+      "sub_category": "Handloom",
+      "thumbnail": "/uploads/bbwbsr7hf6-1783675880214.jpg",
+      "images": [
+        "/uploads/bbwbsr7hf6-1783675880214.jpg"
+      ],
+      "price": 2000,
+      "offer_price": 1299,
+      "discount_pct": 35,
+      "stock": 2,
+      "color": "Blush Pink",
+      "occasion": "Daily, Office",
+      "wash_care": "Cold hand wash",
+      "is_featured": false,
+      "is_trending": false,
+      "is_bestseller": false,
+      "is_new_arrival": true,
+      "is_archived": false,
+      "status": "active",
+      "updated_at": "2026-07-10T09:35:16.959Z",
+      "low_stock_threshold": 5,
+      "weight": "",
+      "length": ""
+    },
+    {
+      "id": "p-6",
+      "name": "Count Mul Cotton",
+      "slug": "royal-purple-banarasi",
+      "sku": "DRP-BNR-006",
+      "description": "Banarasi silk in regal purple with antique gold zari floral jaal.",
+      "saree_type": "Banarasi",
+      "fabric": "Katan Silk",
+      "category": "Festive Collection",
+      "sub_category": "Banarasi",
+      "thumbnail": "/uploads/hi4jz5w4uv-1783676136727.jpg",
+      "images": [
+        "/uploads/hi4jz5w4uv-1783676136727.jpg"
+      ],
+      "price": 2000,
+      "offer_price": 1299,
+      "discount_pct": 35,
+      "stock": 2,
+      "color": "Royal Purple",
+      "occasion": "Festive, Wedding",
+      "wash_care": "Dry clean only",
+      "is_featured": true,
+      "is_trending": true,
+      "is_bestseller": false,
+      "is_new_arrival": true,
+      "is_archived": false,
+      "status": "active",
+      "updated_at": "2026-07-10T09:35:50.859Z",
+      "low_stock_threshold": 5,
+      "weight": "",
+      "length": ""
+    },
+    {
+      "id": "p-7",
+      "name": "Count Mul Cotton",
+      "slug": "maroon-zari-heritage",
+      "sku": "DRP-HER-007",
+      "description": "Heritage Kanchipuram with double-warp zari and temple border.",
+      "saree_type": "Kanchipuram",
+      "fabric": "Pure Silk",
+      "category": "Silk Sarees",
+      "sub_category": "Heritage",
+      "thumbnail": "/uploads/r4stcpt6ydn-1783676172187.jpg",
+      "images": [
+        "/uploads/r4stcpt6ydn-1783676172187.jpg"
+      ],
+      "price": 2000,
+      "offer_price": 1299,
+      "discount_pct": 35,
+      "stock": 9,
+      "color": "Deep Maroon",
+      "occasion": "Wedding, Festive",
+      "wash_care": "Dry clean only",
+      "is_featured": false,
+      "is_trending": true,
+      "is_bestseller": true,
+      "is_new_arrival": false,
+      "is_archived": false,
+      "status": "active",
+      "updated_at": "2026-07-10T09:36:27.777Z",
+      "low_stock_threshold": 5,
+      "weight": "",
+      "length": ""
+    },
+    {
+      "id": "ef5bef11-f5da-4fce-a4c6-3fdf1e41b8bf",
+      "created_at": "2026-07-10T09:22:09.378Z",
+      "updated_at": "2026-07-10T09:37:21.244Z",
+      "is_archived": false,
+      "is_featured": true,
+      "is_trending": true,
+      "is_new_arrival": true,
+      "is_bestseller": true,
+      "stock": 2,
+      "low_stock_threshold": 5,
+      "status": "active",
+      "name": "Count Mul Cotton",
+      "description": "Crafted in 120 count mul cotton, this saree is incredibly lightweight, breathable, and perfect for festive occasions. ✨\n\n💛 Price: ₹1,299\n\n🚚 Free Shipping Across India\n\nProduct Details •  120 Count Mul Cotton\n• Lightweight & Comfortable\n• Includes Saree Only (No Blouse Piece)\n• Colour may slightly vary due to lighting and screen settings.\n\nCare Instructions • Gentle hand wash or dry clean recommended.\n• Dry in shade and iron on low heat if needed.\n\nOrder & Shipping 📲 Order via WhatsApp\n💳 Prepaid Orders Only (No COD)\n📦 Dispatch & Delivery: 7–10 Working Days\n\nReturn & Exchange Returns/Exchanges are accepted only for damaged products with a complete unboxing video, reported within 24 hours of delivery.",
+      "sku": "DRP-KAN-045",
+      "saree_type": "Chanderi Cotton",
+      "fabric": "Cotton Blend",
+      "category": "Cotton",
+      "sub_category": "Traditional",
+      "price": 2000,
+      "offer_price": 1299,
+      "weight": "",
+      "length": "",
+      "color": "white ",
+      "occasion": "Festive wear",
+      "wash_care": "",
+      "images": [
+        "/uploads/qdzdzdln9br-1783675296176.jpg"
+      ],
+      "thumbnail": "/uploads/qdzdzdln9br-1783675296176.jpg",
+      "slug": "count-mul-cotton-mreq8kd5",
+      "discount_pct": 35
+    },
+    {
+      "id": "c8509e5d-f6d9-4e8b-9814-115fbb6a7435",
+      "created_at": "2026-07-10T09:25:34.843Z",
+      "updated_at": "2026-07-10T09:37:34.311Z",
+      "is_archived": false,
+      "is_featured": true,
+      "is_trending": true,
+      "is_new_arrival": true,
+      "is_bestseller": true,
+      "stock": 2,
+      "low_stock_threshold": 5,
+      "status": "active",
+      "name": " Count Mul Cotton",
+      "description": "Crafted in 120 count mul cotton, this saree is incredibly lightweight, breathable, and perfect for festive occasions. ✨\n\n💛 Price: ₹1,299\n\n🚚 Free Shipping Across India\n\nProduct Details •  120 Count Mul Cotton\n• Lightweight & Comfortable\n• Includes Saree Only (No Blouse Piece)\n• Colour may slightly vary due to lighting and screen settings.\n\nCare Instructions • Gentle hand wash or dry clean recommended.\n• Dry in shade and iron on low heat if needed.\n\nOrder & Shipping 📲 Order via WhatsApp\n💳 Prepaid Orders Only (No COD)\n📦 Dispatch & Delivery: 7–10 Working Days\n\nReturn & Exchange Returns/Exchanges are accepted only for damaged products with a complete unboxing video, reported within 24 hours of delivery.",
+      "sku": "DRP-KAN-007",
+      "saree_type": "",
+      "fabric": "",
+      "category": "Festive",
+      "sub_category": "",
+      "price": 2000,
+      "offer_price": 1299,
+      "weight": "",
+      "length": "",
+      "color": "",
+      "occasion": "",
+      "wash_care": "",
+      "images": [
+        "/uploads/ccqewvaxumw-1783675512349.jpg"
+      ],
+      "thumbnail": "/uploads/ccqewvaxumw-1783675512349.jpg",
+      "slug": "count-mul-cotton-mreqcyur",
+      "discount_pct": 35
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-1",
+      "name": "Silk Sarees",
+      "slug": "silk-sarees",
+      "count": "84 pieces",
+      "is_active": true
+    },
+    {
+      "id": "cat-2",
+      "name": "Wedding Collection",
+      "slug": "wedding-collection",
+      "count": "126 pieces",
+      "is_active": true
+    },
+    {
+      "id": "cat-3",
+      "name": "Designer Sarees",
+      "slug": "designer-sarees",
+      "count": "67 pieces",
+      "is_active": true
+    },
+    {
+      "id": "cat-4",
+      "name": "Party Wear",
+      "slug": "party-wear",
+      "count": "92 pieces",
+      "is_active": true
+    },
+    {
+      "id": "cat-5",
+      "name": "Cotton Sarees",
+      "slug": "cotton-sarees",
+      "count": "58 pieces",
+      "is_active": true
+    },
+    {
+      "id": "cat-6",
+      "name": "Festive Collection",
+      "slug": "festive-collection",
+      "count": "104 pieces",
+      "is_active": true
+    }
+  ],
+  "coupons": [
+    {
+      "id": "coupon-1",
+      "code": "WELCOME10",
+      "description": "10% off your first order (up to ₹2000)",
+      "discount_type": "percent",
+      "discount_value": 10,
+      "min_order_amount": 1999,
+      "max_discount": 100,
+      "active": true,
+      "usage_limit": null,
+      "valid_until": null,
+      "updated_at": "2026-07-10T08:45:09.416Z"
+    }
+  ],
+  "user_roles": [
+    {
+      "id": "role-1",
+      "user_id": "admin-user-id",
+      "role": "admin"
+    },
+    {
+      "id": "fee7d320-5275-4df1-9bee-a6ffb4ee9157",
+      "user_id": "9276dc7c-36db-463a-8bd7-0777a49663aa",
+      "role": "customer",
+      "created_at": "2026-06-18T08:13:09.468Z"
+    },
+    {
+      "id": "24bc361f-cd28-4328-91b3-78e70f4d176d",
+      "user_id": "0575a125-d2cb-4fa1-b413-8c9711d81376",
+      "role": "admin",
+      "created_at": "2026-06-27T06:13:13.082Z"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "9276dc7c-36db-463a-8bd7-0777a49663aa",
+      "full_name": "ssreesh",
+      "phone": "8129410562",
+      "email": "ssreesh44@gmail.com",
+      "created_at": "2026-06-18T08:13:09.468Z",
+      "updated_at": "2026-06-18T08:13:09.468Z"
+    },
+    {
+      "id": "0575a125-d2cb-4fa1-b413-8c9711d81376",
+      "full_name": "Draupadi",
+      "phone": "8129410562",
+      "email": "draupadisaree.admin@gmail.com",
+      "created_at": "2026-06-27T06:13:13.082Z",
+      "updated_at": "2026-06-27T06:13:13.082Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": "e1c6b7ea-024c-4fc3-b6c7-77033ee01bec",
+      "created_at": "2026-07-09T16:10:28.930Z",
+      "updated_at": "2026-07-09T16:16:40.788Z",
+      "status": "delivered",
+      "invoice_no": "INV-2026-901805",
+      "estimated_delivery": "2026-07-14T16:10:28.930Z",
+      "delivery_partner": "Delhivery Luxe",
+      "tracking_number": "TRK7550767291",
+      "user_id": "9276dc7c-36db-463a-8bd7-0777a49663aa",
+      "items": [
+        {
+          "id": "Rukmini Kanchipuram Silk",
+          "name": "Rukmini Kanchipuram Silk",
+          "price": 1,
+          "img": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800",
+          "qty": 1
+        }
+      ],
+      "subtotal": 1,
+      "shipping": 0,
+      "total": 1,
+      "payment_method": "upi",
+      "payment_status": "paid",
+      "shipping_address": {
+        "id": "7b28aaad-5abc-4187-ac2c-b69b622b98b1",
+        "created_at": "2026-07-09T16:02:26.459Z",
+        "updated_at": "2026-07-09T16:02:26.459Z",
+        "label": "Home",
+        "full_name": "S Sreesh",
+        "phone": "8129410562",
+        "address_line1": "manimandiram ",
+        "address_line2": "channanikadu ",
+        "city": "kottayam",
+        "state": "kerala",
+        "pincode": "686533",
+        "country": "India",
+        "is_default": true,
+        "user_id": "9276dc7c-36db-463a-8bd7-0777a49663aa"
+      }
+    },
+    {
+      "id": "f3a69fca-54f9-4c5d-8bdb-8de3f62eea3d",
+      "created_at": "2026-07-09T16:15:39.419Z",
+      "updated_at": "2026-07-09T16:16:36.176Z",
+      "status": "accepted",
+      "invoice_no": "INV-2026-917808",
+      "estimated_delivery": "2026-07-14T16:15:39.419Z",
+      "delivery_partner": "Delhivery Luxe",
+      "tracking_number": "TRK6101645544",
+      "user_id": "9276dc7c-36db-463a-8bd7-0777a49663aa",
+      "items": [
+        {
+          "id": "Rukmini Kanchipuram Silk",
+          "name": "Rukmini Kanchipuram Silk",
+          "price": 1,
+          "img": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800",
+          "qty": 1
+        }
+      ],
+      "subtotal": 1,
+      "shipping": 0,
+      "total": 1,
+      "payment_method": "upi",
+      "payment_status": "paid",
+      "shipping_address": {
+        "id": "7b28aaad-5abc-4187-ac2c-b69b622b98b1",
+        "created_at": "2026-07-09T16:02:26.459Z",
+        "updated_at": "2026-07-09T16:02:26.459Z",
+        "label": "Home",
+        "full_name": "S Sreesh",
+        "phone": "8129410562",
+        "address_line1": "manimandiram ",
+        "address_line2": "channanikadu ",
+        "city": "kottayam",
+        "state": "kerala",
+        "pincode": "686533",
+        "country": "India",
+        "is_default": true,
+        "user_id": "9276dc7c-36db-463a-8bd7-0777a49663aa"
+      }
+    },
+    {
+      "id": "575f99ac-118f-455b-b06c-929d040487ac",
+      "created_at": "2026-07-09T16:30:15.070Z",
+      "updated_at": "2026-07-09T16:32:22.199Z",
+      "status": "delivered",
+      "invoice_no": "INV-2026-309889",
+      "estimated_delivery": "2026-07-14T16:30:15.070Z",
+      "delivery_partner": "Delhivery Luxe",
+      "tracking_number": "TRK3583993777",
+      "user_id": "9276dc7c-36db-463a-8bd7-0777a49663aa",
+      "items": [
+        {
+          "id": "Rukmini Kanchipuram Silk",
+          "name": "Rukmini Kanchipuram Silk",
+          "price": 1,
+          "img": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800",
+          "qty": 1
+        }
+      ],
+      "subtotal": 1,
+      "shipping": 0,
+      "total": 1,
+      "payment_method": "upi",
+      "payment_status": "paid",
+      "shipping_address": {
+        "id": "7b28aaad-5abc-4187-ac2c-b69b622b98b1",
+        "created_at": "2026-07-09T16:02:26.459Z",
+        "updated_at": "2026-07-09T16:02:26.459Z",
+        "label": "Home",
+        "full_name": "S Sreesh",
+        "phone": "8129410562",
+        "address_line1": "manimandiram ",
+        "address_line2": "channanikadu ",
+        "city": "kottayam",
+        "state": "kerala",
+        "pincode": "686533",
+        "country": "India",
+        "is_default": true,
+        "user_id": "9276dc7c-36db-463a-8bd7-0777a49663aa"
+      }
+    },
+    {
+      "id": "ea7bc2df-b953-4b4b-94f8-40d917c56ea8",
+      "created_at": "2026-07-10T08:56:26.975Z",
+      "updated_at": "2026-07-10T08:56:26.975Z",
+      "status": "placed",
+      "invoice_no": "INV-2026-201842",
+      "estimated_delivery": "2026-07-15T08:56:26.975Z",
+      "delivery_partner": "Delhivery Luxe",
+      "tracking_number": "TRK1661285457",
+      "user_id": "9276dc7c-36db-463a-8bd7-0777a49663aa",
+      "items": [
+        {
+          "id": "Rukmini Kanchipuram Silk",
+          "name": "Rukmini Kanchipuram Silk",
+          "price": 1,
+          "img": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800",
+          "qty": 2
+        }
+      ],
+      "subtotal": 2,
+      "shipping": 0,
+      "total": 2,
+      "payment_method": "upi",
+      "payment_status": "paid",
+      "shipping_address": {
+        "id": "7b28aaad-5abc-4187-ac2c-b69b622b98b1",
+        "created_at": "2026-07-09T16:02:26.459Z",
+        "updated_at": "2026-07-09T16:02:26.459Z",
+        "label": "Home",
+        "full_name": "S Sreesh",
+        "phone": "8129410562",
+        "address_line1": "manimandiram ",
+        "address_line2": "channanikadu ",
+        "city": "kottayam",
+        "state": "kerala",
+        "pincode": "686533",
+        "country": "India",
+        "is_default": true,
+        "user_id": "9276dc7c-36db-463a-8bd7-0777a49663aa"
+      }
+    },
+    {
+      "id": "211218dd-0737-459e-bf36-b0ea818c409a",
+      "created_at": "2026-07-10T10:01:35.228Z",
+      "updated_at": "2026-07-10T10:06:28.112Z",
+      "status": "accepted",
+      "invoice_no": "INV-2026-810782",
+      "estimated_delivery": "2026-07-15T10:01:35.227Z",
+      "delivery_partner": "Delhivery Luxe",
+      "tracking_number": "TRK5754928093",
+      "user_id": "9276dc7c-36db-463a-8bd7-0777a49663aa",
+      "items": [
+        {
+          "id": "Count Mul Cotton",
+          "name": "Count Mul Cotton",
+          "price": 1299,
+          "img": "/uploads/1fc14iemzy3-1783675747491.jpg",
+          "qty": 2
+        }
+      ],
+      "subtotal": 2598,
+      "shipping": 0,
+      "total": 2598,
+      "payment_method": "upi",
+      "payment_status": "paid",
+      "shipping_address": {
+        "id": "7b28aaad-5abc-4187-ac2c-b69b622b98b1",
+        "created_at": "2026-07-09T16:02:26.459Z",
+        "updated_at": "2026-07-09T16:02:26.459Z",
+        "label": "Home",
+        "full_name": "S Sreesh",
+        "phone": "8129410562",
+        "address_line1": "manimandiram ",
+        "address_line2": "channanikadu ",
+        "city": "kottayam",
+        "state": "kerala",
+        "pincode": "686533",
+        "country": "India",
+        "is_default": true,
+        "user_id": "9276dc7c-36db-463a-8bd7-0777a49663aa"
+      }
+    }
+  ],
+  "addresses": [
+    {
+      "id": "7b28aaad-5abc-4187-ac2c-b69b622b98b1",
+      "created_at": "2026-07-09T16:02:26.459Z",
+      "updated_at": "2026-07-09T16:02:26.459Z",
+      "label": "Home",
+      "full_name": "S Sreesh",
+      "phone": "8129410562",
+      "address_line1": "manimandiram ",
+      "address_line2": "channanikadu ",
+      "city": "kottayam",
+      "state": "kerala",
+      "pincode": "686533",
+      "country": "India",
+      "is_default": true,
+      "user_id": "9276dc7c-36db-463a-8bd7-0777a49663aa"
+    }
+  ],
+  "reviews": [],
+  "contact_queries": [],
+  "users": [
+    {
+      "id": "f8bad36c-b177-467a-a3a1-779a1b60be23",
+      "email": "test-1781769204728@example.com",
+      "password": "password123",
+      "email_confirmed_at": null,
+      "raw_user_meta_data": {
+        "full_name": "Test User",
+        "phone": "1234567890"
+      },
+      "otp_code": "666940",
+      "otp_expires_at": "2026-06-18T08:08:24.730Z"
+    },
+    {
+      "id": "9276dc7c-36db-463a-8bd7-0777a49663aa",
+      "email": "ssreesh44@gmail.com",
+      "password": "ssreesh123AA@",
+      "email_confirmed_at": "2026-06-18T08:13:09.468Z",
+      "raw_user_meta_data": {
+        "full_name": "ssreesh",
+        "phone": "8129410562"
+      },
+      "otp_code": null,
+      "otp_expires_at": null
+    },
+    {
+      "id": "0575a125-d2cb-4fa1-b413-8c9711d81376",
+      "email": "draupadisaree.admin@gmail.com",
+      "password": "AtelierbyDivya2026@#100%%",
+      "email_confirmed_at": "2026-06-27T06:13:13.082Z",
+      "raw_user_meta_data": {
+        "full_name": "Draupadi",
+        "phone": "8129410562"
+      }
+    }
+  ],
+  "return_settings": [
+    {
+      "id": "default-settings",
+      "enable_returns": false,
+      "return_window": 3,
+      "reasons": [
+        "Wrong Product",
+        "Damaged Product",
+        "Defective Product",
+        "Quality Issue",
+        "Wrong Size",
+        "Other"
+      ],
+      "refund_method": "original_payment",
+      "auto_approval": false,
+      "eligible_categories": [
+        "Silk",
+        "Wedding",
+        "Designer",
+        "Cotton",
+        "Festive"
+      ],
+      "created_at": "2026-07-04T07:09:45.056Z",
+      "updated_at": "2026-07-09T16:18:03.111Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "948f3be6-0f79-4036-a29b-9262bd61acf2",
+      "user_id": "9276dc7c-36db-463a-8bd7-0777a49663aa",
+      "title": "Order Status: accepted",
+      "message": "Your order #f3a69fca status is now accepted.",
+      "type": "order_status_changed",
+      "read": true,
+      "created_at": "2026-07-09T16:16:36.178Z",
+      "updated_at": "2026-07-09T16:16:55.913Z"
+    },
+    {
+      "id": "3a282bf7-2220-436e-8921-bd3819a40da4",
+      "user_id": "9276dc7c-36db-463a-8bd7-0777a49663aa",
+      "title": "Order Status: delivered",
+      "message": "Your order #e1c6b7ea status is now delivered.",
+      "type": "order_status_changed",
+      "read": true,
+      "created_at": "2026-07-09T16:16:40.789Z",
+      "updated_at": "2026-07-09T16:16:55.913Z"
+    },
+    {
+      "id": "892482a3-1b4f-41b4-9b10-99d5f811ba69",
+      "user_id": "admin",
+      "title": "New Order Placed",
+      "message": "Customer placed order #575f99ac for ₹1.",
+      "type": "order_placed",
+      "read": true,
+      "created_at": "2026-07-09T16:30:15.074Z",
+      "updated_at": "2026-07-09T16:32:28.887Z"
+    },
+    {
+      "id": "bca688fd-26d3-44f2-94f5-74c68ce8e911",
+      "user_id": "9276dc7c-36db-463a-8bd7-0777a49663aa",
+      "title": "Order Status: accepted",
+      "message": "Your order #575f99ac status is now accepted.",
+      "type": "order_status_changed",
+      "read": true,
+      "created_at": "2026-07-09T16:30:51.654Z",
+      "updated_at": "2026-07-10T08:47:09.618Z"
+    },
+    {
+      "id": "2613a747-b36f-4143-9343-d795494d0590",
+      "user_id": "9276dc7c-36db-463a-8bd7-0777a49663aa",
+      "title": "Order Status: delivered",
+      "message": "Your order #575f99ac status is now delivered.",
+      "type": "order_status_changed",
+      "read": true,
+      "created_at": "2026-07-09T16:32:22.201Z",
+      "updated_at": "2026-07-10T08:47:09.618Z"
+    },
+    {
+      "id": "3a11cabb-cfd0-42f7-8874-590b97ac269f",
+      "user_id": "admin",
+      "title": "New Order Placed",
+      "message": "Customer placed order #ea7bc2df for ₹2.",
+      "type": "order_placed",
+      "read": true,
+      "created_at": "2026-07-10T08:56:26.976Z",
+      "updated_at": "2026-07-10T10:07:04.595Z"
+    },
+    {
+      "id": "8dd402f1-6adf-416c-96a2-f026cee917e6",
+      "user_id": "admin",
+      "title": "New Order Placed",
+      "message": "Customer placed order #211218dd for ₹2,598.",
+      "type": "order_placed",
+      "read": true,
+      "created_at": "2026-07-10T10:01:35.237Z",
+      "updated_at": "2026-07-10T10:07:07.551Z"
+    },
+    {
+      "id": "1110df38-01b6-4861-b1db-30d852c138c1",
+      "user_id": "9276dc7c-36db-463a-8bd7-0777a49663aa",
+      "title": "Order Status: delivered",
+      "message": "Your order #211218dd status is now delivered.",
+      "type": "order_status_changed",
+      "read": false,
+      "created_at": "2026-07-10T10:06:23.115Z"
+    },
+    {
+      "id": "9863a144-d349-4d68-9e17-ce471038f97f",
+      "user_id": "9276dc7c-36db-463a-8bd7-0777a49663aa",
+      "title": "Order Status: accepted",
+      "message": "Your order #211218dd status is now accepted.",
+      "type": "order_status_changed",
+      "read": false,
+      "created_at": "2026-07-10T10:06:28.116Z"
+    }
+  ]
+}
