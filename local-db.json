@@ -368,6 +368,12 @@
       "user_id": "0575a125-d2cb-4fa1-b413-8c9711d81376",
       "role": "admin",
       "created_at": "2026-06-27T06:13:13.082Z"
+    },
+    {
+      "id": "3fe63bec-2048-4371-aea5-0e5fb5108323",
+      "user_id": "cb8d9aca-573c-4b2e-8441-8f66bf65a331",
+      "role": "customer",
+      "created_at": "2026-07-10T10:51:58.454Z"
     }
   ],
   "profiles": [
@@ -386,6 +392,14 @@
       "email": "draupadisaree.admin@gmail.com",
       "created_at": "2026-06-27T06:13:13.082Z",
       "updated_at": "2026-06-27T06:13:13.082Z"
+    },
+    {
+      "id": "cb8d9aca-573c-4b2e-8441-8f66bf65a331",
+      "full_name": "sreedev",
+      "phone": "8891296148",
+      "email": "sreedev97@gmail.com",
+      "created_at": "2026-07-10T10:51:58.454Z",
+      "updated_at": "2026-07-10T10:51:58.454Z"
     }
   ],
   "orders": [
@@ -648,6 +662,16 @@
       "raw_user_meta_data": {
         "full_name": "Draupadi",
         "phone": "8129410562"
+      }
+    },
+    {
+      "id": "cb8d9aca-573c-4b2e-8441-8f66bf65a331",
+      "email": "sreedev97@gmail.com",
+      "password": "ssreesh123AA@",
+      "email_confirmed_at": "2026-07-10T10:51:58.454Z",
+      "raw_user_meta_data": {
+        "full_name": "sreedev",
+        "phone": "8891296148"
       }
     }
   ],

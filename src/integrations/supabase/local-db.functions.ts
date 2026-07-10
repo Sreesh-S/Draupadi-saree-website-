@@ -1,25 +1,50 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
+// Helper to get writable database path
+async function getDbPath(): Promise<string> {
+  const path = await import("path");
+  const isVercel = process.env.VERCEL === "1" || process.env.NODE_ENV === "production";
+  if (isVercel) {
+    return path.resolve("/tmp", "local-db.json");
+  }
+  return path.resolve(process.cwd(), "local-db.json");
+}
+
 // Helper to read database
 async function readDb(): Promise<any> {
   const fs = await import("fs");
-  const path = await import("path");
-  const dbPath = path.resolve(process.cwd(), "local-db.json");
+  const dbPath = await getDbPath();
   try {
     if (!fs.existsSync(dbPath)) {
-      return {
-        products: [],
-        categories: [],
-        coupons: [],
-        user_roles: [],
-        profiles: [],
-        orders: [],
-        addresses: [],
-        reviews: [],
-        contact_queries: [],
-        users: []
-      };
+      // Try to load initial seeded database from local-db.json
+      let initialDb;
+      try {
+        initialDb = (await import("../../../local-db.json")).default;
+      } catch (err) {
+        console.error("Failed to import initial local-db.json:", err);
+        initialDb = {
+          products: [],
+          categories: [],
+          coupons: [],
+          user_roles: [],
+          profiles: [],
+          orders: [],
+          addresses: [],
+          reviews: [],
+          contact_queries: [],
+          users: []
+        };
+      }
+      
+      // Write to the writable path so future operations succeed
+      try {
+        fs.writeFileSync(dbPath, JSON.stringify(initialDb, null, 2), "utf8");
+      } catch (writeErr) {
+        console.error("Failed to write initial db to writable path:", writeErr);
+      }
+      
+      return initialDb;
     }
     const data = fs.readFileSync(dbPath, "utf8");
     return JSON.parse(data);
@@ -32,8 +57,7 @@ async function readDb(): Promise<any> {
 // Helper to write database
 async function writeDb(data: any): Promise<void> {
   const fs = await import("fs");
-  const path = await import("path");
-  const dbPath = path.resolve(process.cwd(), "local-db.json");
+  const dbPath = await getDbPath();
   try {
     fs.writeFileSync(dbPath, JSON.stringify(data, null, 2), "utf8");
   } catch (error) {
@@ -41,6 +65,7 @@ async function writeDb(data: any): Promise<void> {
     throw new Error("Local database write failure");
   }
 }
+
 
 // Helper to notify subscribers when a product is created
 // Helper to send real emails via SMTP
@@ -74,7 +99,10 @@ async function triggerDatabaseHooks(table: string, action: string, records: any[
   try {
     const fs = await import("fs");
     const path = await import("path");
-    const logPath = path.resolve(process.cwd(), "email-logs.txt");
+    const isVercel = process.env.VERCEL === "1" || process.env.NODE_ENV === "production";
+    const logPath = isVercel
+      ? path.resolve("/tmp", "email-logs.txt")
+      : path.resolve(process.cwd(), "email-logs.txt");
     const crypto = await import("crypto");
 
     if (table === "products" && action === "insert") {
@@ -615,13 +643,29 @@ export const uploadLocalFile = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const fs = await import("fs");
     const path = await import("path");
-    const publicDir = path.resolve(process.cwd(), "public");
-    const uploadsDir = path.resolve(publicDir, "uploads");
-    if (!fs.existsSync(uploadsDir)) {
-      fs.mkdirSync(uploadsDir, { recursive: true });
+    try {
+      const publicDir = path.resolve(process.cwd(), "public");
+      const uploadsDir = path.resolve(publicDir, "uploads");
+      if (!fs.existsSync(uploadsDir)) {
+        fs.mkdirSync(uploadsDir, { recursive: true });
+      }
+      const buffer = Buffer.from(data.base64.split(",")[1] || data.base64, "base64");
+      const filePath = path.resolve(uploadsDir, data.filename);
+      fs.writeFileSync(filePath, buffer);
+      return { data: { success: true }, error: null };
+    } catch (err: any) {
+      console.warn("Failed to upload file to public directory (read-only filesystem):", err);
+      try {
+        const tmpDir = "/tmp/uploads";
+        if (!fs.existsSync(tmpDir)) {
+          fs.mkdirSync(tmpDir, { recursive: true });
+        }
+        const buffer = Buffer.from(data.base64.split(",")[1] || data.base64, "base64");
+        const filePath = path.resolve(tmpDir, data.filename);
+        fs.writeFileSync(filePath, buffer);
+        return { data: { success: true }, error: null };
+      } catch (tmpErr) {
+        return { data: null, error: { message: "Upload failed: " + err.message } };
+      }
     }
-    const buffer = Buffer.from(data.base64.split(",")[1] || data.base64, "base64");
-    const filePath = path.resolve(uploadsDir, data.filename);
-    fs.writeFileSync(filePath, buffer);
-    return { data: { success: true }, error: null };
   });
