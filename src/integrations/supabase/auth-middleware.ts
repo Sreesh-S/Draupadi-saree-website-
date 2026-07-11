@@ -25,24 +25,37 @@ export const requireSupabaseAuth = createMiddleware({ type: 'function' }).server
       throw new Error('Unauthorized: No token provided');
     }
 
-    // Decode the mock token (base64 encoded JSON string)
-    let claims: any;
-    try {
-      claims = JSON.parse(Buffer.from(token, 'base64').toString('utf8'));
-    } catch (err) {
-      // Fallback: treat the raw token as the user ID
-      claims = { sub: token, email: "unknown@example.com" };
-    }
+    let userId: string;
+    let email: string;
 
-    if (!claims.sub) {
-      throw new Error('Unauthorized: Invalid token structure');
+    // Check if we are using the real Supabase client
+    const isRealSupabase = typeof (supabase as any).auth.getUser === 'function' && !(supabase as any).from.toString().includes('MockQueryBuilder');
+
+    if (isRealSupabase) {
+      // Call real Supabase to verify token and get user
+      const { data: { user }, error } = await supabase.auth.getUser(token);
+      if (error || !user) {
+        throw new Error(`Unauthorized: Invalid Supabase token: ${error?.message || 'No user'}`);
+      }
+      userId = user.id;
+      email = user.email || '';
+    } else {
+      // Decode the mock token (base64 encoded JSON string)
+      let claims: any;
+      try {
+        claims = JSON.parse(Buffer.from(token, 'base64').toString('utf8'));
+      } catch (err) {
+        claims = { sub: token, email: "unknown@example.com" };
+      }
+      userId = claims.sub;
+      email = claims.email;
     }
 
     return next({
       context: {
         supabase,
-        userId: claims.sub,
-        claims: claims,
+        userId,
+        email,
       },
     });
   },
